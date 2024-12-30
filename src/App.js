@@ -36,9 +36,10 @@ const App = () => {
           <h1>¡Feliz Cumpleaños!</h1>
           {currentPista < pistas.length ? (
             <Pista
-              pregunta={pistas[currentPista].pregunta}
+              mapa={pistas[currentPista].mapa}
               respuestaCorrecta={pistas[currentPista].respuesta}
               onRespuestaCorrecta={handleRespuestaCorrecta}
+              siguientePista={pistas[currentPista].pista}
             /> 
           ) : (
             <h2>¡Has completado la búsqueda del tesoro!</h2>
