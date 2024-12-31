@@ -36,7 +36,7 @@ const App = () => {
           <h1>¡Feliz Cumpleaños!</h1>
           {currentPista < pistas.length ? (
             <Pista
-              mapa={pistas[currentPista].mapa}
+              id={pistas[currentPista].id}
               respuestaCorrecta={pistas[currentPista].respuesta}
               onRespuestaCorrecta={handleRespuestaCorrecta}
               siguientePista={pistas[currentPista].pista}

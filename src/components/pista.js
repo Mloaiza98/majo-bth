@@ -1,15 +1,24 @@
 import React, { useState } from 'react';
-import mapas from '../images/Majo_Map.png';
-const Pista = ({ mapa, respuestaCorrecta, onRespuestaCorrecta, siguientePista }) => {
+import map1 from '../images/1.jpeg';
+import map2 from '../images/2.jpeg';
+import map3 from '../images/3.jpeg';
+import map4 from '../images/4.jpeg';
+import map5 from '../images/5.jpeg';
+const mapas = [map1, map2, map3, map4, map5 ]
+   
+
+console.log(mapas[0]);
+const Pista = ({ id, respuestaCorrecta, onRespuestaCorrecta, siguientePista }) => {
   const [respuesta, setRespuesta] = useState('');
   const [mensaje, setMensaje] = useState('');
   const [pistaproxima, setPistaProxima] = useState('');
-
+  console.log(id);
   const handleInputChange = (e) => {
     setRespuesta(e.target.value);
   };
 
   const handleSubmit = (e) => {
+  
     e.preventDefault();
     if (respuesta.toLowerCase() === respuestaCorrecta.toLowerCase()) {
       setMensaje('Esoooo chiquitica! ');
@@ -29,7 +38,7 @@ const Pista = ({ mapa, respuestaCorrecta, onRespuestaCorrecta, siguientePista })
 
   return (
     <div>
-      <img src={mapas} alt="Mapa" height={"400px"}></img>
+      <img src={mapas[id]} alt="Mapa" height={"400px"}></img>
       <form onSubmit={handleSubmit}>
         <input type="text" value={respuesta} onChange={handleInputChange} />
         <button type="submit">Enviar</button>
