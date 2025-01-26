@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { pistas } from './data/pistas';
 import Pista from './components/pista';
+import mainmap from './images/mainmap.png';
 // import Progreso from './components/Progreso';
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
         <div className="bienvenida">
           <h1>¡Feliz Cumpleaños, amor!</h1>
           <p>Pero lastimosamente, para recibir tus regalos tendrás que encontrarlos...</p>
+          <img src={mainmap} alt="Mapa sin marcas"></img>
           <button onClick={comenzarBusqueda}>Empieza la búsqueda del tesoro</button>
         </div>
       ) : (
@@ -39,7 +41,7 @@ const App = () => {
               id={pistas[currentPista].id}
               respuestaCorrecta={pistas[currentPista].respuesta}
               onRespuestaCorrecta={handleRespuestaCorrecta}
-              siguientePista={pistas[currentPista].pista}
+              // siguientePista={pistas[currentPista].pista}
             /> 
           ) : (
             <h2>¡Has completado la búsqueda del tesoro!</h2>

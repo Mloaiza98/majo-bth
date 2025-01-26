@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
-import map1 from '../images/1.jpeg';
-import map2 from '../images/2.jpeg';
-import map3 from '../images/3.jpeg';
-import map4 from '../images/4.jpeg';
-import map5 from '../images/5.jpeg';
-const mapas = [map1, map2, map3, map4, map5 ]
+import map1 from '../images/1.png';
+import map2 from '../images/2.png';
+import map3 from '../images/3.png';
+import map4 from '../images/4.png';
+// import map5 from '../images/5.png';
+const mapas = [map1, map2, map3, map4 ]
    
 
 console.log(mapas[0]);
 const Pista = ({ id, respuestaCorrecta, onRespuestaCorrecta, siguientePista }) => {
   const [respuesta, setRespuesta] = useState('');
   const [mensaje, setMensaje] = useState('');
-  const [pistaproxima, setPistaProxima] = useState('');
-  console.log(id);
+  const [Check, setCheck] = useState(null);
   const handleInputChange = (e) => {
     setRespuesta(e.target.value);
   };
@@ -22,9 +21,9 @@ const Pista = ({ id, respuestaCorrecta, onRespuestaCorrecta, siguientePista }) =
     e.preventDefault();
     if (respuesta.toLowerCase() === respuestaCorrecta.toLowerCase()) {
       setMensaje('Esoooo chiquitica! ');
-      // onRespuestaCorrecta();
+      setCheck(true);
       setRespuesta('');
-      setPistaProxima(siguientePista);
+      // setPistaProxima(siguientePista);
     } else {
       setMensaje('Mehh, intenta de nuevo');
       setRespuesta('');
@@ -33,20 +32,19 @@ const Pista = ({ id, respuestaCorrecta, onRespuestaCorrecta, siguientePista }) =
   const handleSubmitNext = (e) => {
     onRespuestaCorrecta();
       setMensaje('');
-      setPistaProxima(null);
+      setCheck(null);
   };
 
   return (
     <div>
-      <img src={mapas[id]} alt="Mapa" height={"400px"}></img>
+      <img src={mapas[id-1]} alt="Mapa" height={"400px"}></img>
       <form onSubmit={handleSubmit}>
-        <input type="text" value={respuesta} onChange={handleInputChange} />
-        <button type="submit">Enviar</button>
+        <input type="numeric" value={respuesta} onChange={handleInputChange} onSubmit={handleSubmit}/>
+        {/* <button type="submit"></button> */}
       </form>
       {mensaje && <p>{mensaje}</p>}
-      {pistaproxima && 
+      {Check && 
       <div> 
-      <p>{pistaproxima}</p> 
       <button type="submit" onClick={handleSubmitNext}>¿Ya encontraste el regalo?</button>
       </div>}
     </div>
