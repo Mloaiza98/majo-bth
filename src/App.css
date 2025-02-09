@@ -51,6 +51,7 @@ button {
   font-size: 1rem;
   font-weight: bold;
   padding: 12px 20px;
+  margin: 0.5rem 0;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -59,5 +60,16 @@ button {
 
 button:hover {
   background-color: #754E1A;
+}
+input {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #CBA35C; /* Color dorado suave */
+  border-radius: 8px;
+  outline: none;
+  text-align: center;
+  transition: border-color 0.3s ease-in-out;
 }
 
