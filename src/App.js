@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { pistas } from './data/pistas';
 import Pista from './components/pista';
 import mainmap from './images/mainmap.png';
+import './App.css';
 // import Progreso from './components/Progreso';
 
 const App = () => {
@@ -23,32 +24,29 @@ const App = () => {
   };
 
   return (
-    <div>
-      {/* Pantalla inicial de bienvenida */}
-      {!inicioJuego ? (
-        <div className="bienvenida">
-          <h1>¡Feliz Cumpleaños, amor!</h1>
-          <p>Pero lastimosamente, para recibir tus regalos tendrás que encontrarlos...</p>
-          <img src={mainmap} alt="Mapa sin marcas"></img>
-          <button onClick={comenzarBusqueda}>Empieza la búsqueda del tesoro</button>
-        </div>
-      ) : (
-        // Pantalla del juego
-        <div>
-          <h1>¡Feliz Cumpleaños!</h1>
-          {currentPista < pistas.length ? (
-            <Pista
-              id={pistas[currentPista].id}
-              respuestaCorrecta={pistas[currentPista].respuesta}
-              onRespuestaCorrecta={handleRespuestaCorrecta}
-              // siguientePista={pistas[currentPista].pista}
-            /> 
-          ) : (
-            <h2>¡Has completado la búsqueda del tesoro!</h2>
-          )}
-        </div>
-      )}
-    </div>
+    <div className="container">
+    {!inicioJuego ? (
+      <div>
+        <h1>¡Feliz Cumpleaños, amor!</h1>
+        <p>Para recibir tus regalos tendrás que encontrarlos...</p>
+        <img src={mainmap} alt="Mapa sin marcas" />
+        <button onClick={comenzarBusqueda}>Empieza la búsqueda del tesoro</button>
+      </div>
+    ) : (
+      <div>
+        <h1>¡Feliz Cumpleaños!</h1>
+        {currentPista < pistas.length ? (
+          <Pista
+            id={pistas[currentPista].id}
+            respuestaCorrecta={pistas[currentPista].respuesta}
+            onRespuestaCorrecta={handleRespuestaCorrecta}
+          />
+        ) : (
+          <h2>¡Has completado la búsqueda del tesoro!</h2>
+        )}
+      </div>
+    )}
+  </div>
   );
 };
 
