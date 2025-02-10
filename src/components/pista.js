@@ -6,7 +6,7 @@ import map4 from "../images/4.png";
 // import map5 from '../images/5.png';
 const mapas = [map1, map2, map3, map4];
 
-console.log(mapas[0]);
+
 const Pista = ({
   id,
   respuestaCorrecta,

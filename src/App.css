@@ -28,13 +28,25 @@ h1 {
   font-weight: bold;
   margin-bottom: 10px;
 }
+h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 
 /* Estilos del párrafo */
 p {
   font-size: 1.1rem;
   margin-bottom: 15px;
+  text-align: justify;
+  max-width: 500px;
 }
-
+li {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  text-align: justify;
+  max-width: 500px;
+}
 /* Estilos de la imagen */
 img {
   width: 100%;

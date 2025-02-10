@@ -1,7 +1,7 @@
 export const pistas = [
     {
       id: 1,
-      respuesta: "0808",
+      respuesta: "1234",
     },
     {
       id: 2,
@@ -10,11 +10,16 @@ export const pistas = [
     },
     {
       id: 3,
-      respuesta: "0924",
+      respuesta: "0929",
     },
     {
       id: 4,
       respuesta: "5555",
+   
+    },
+    {
+      id: 5,
+      respuesta: "0924",
    
     },
    
